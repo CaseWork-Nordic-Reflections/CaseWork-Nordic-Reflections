@@ -1,0 +1,611 @@
+---
+
+---
+
+<header class="header">
+  <div class="top-row">
+    <div class="language-selector">
+      <img
+        src="/public/images/header_billeder/dk_flag.png"
+        alt="Danish"
+        class="flag"
+      />
+      <img
+        src="/public/images/header_billeder/uk_flag.png"
+        alt="English"
+        class="flag"
+      />
+    </div>
+    <a href="#" class="logo-link">
+      <img
+        src="/public/images/header_billeder/nr.svg"
+        alt="Nordic Reflections Logo"
+        class="logo"
+      />
+    </a>
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+    <!-- Burger-menu tilføjet -->
+    <div class="burger-menu">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+  </div>
+  <nav class="main-nav">
+    <a href="#galleri">Galleri</a>
+    <a href="#om-os">Om Os</a>
+    <a href="#kontakt">Kontakt</a>
+  </nav>
+</header>
+
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+
+  .header {
+    background-color: #fff;
+    border-bottom: 1px solid #b80202;
+    text-align: center;
+    padding: 10px 20px;
+    position: relative;
+  }
+
+  .top-row {
+    position: relative; /* Sikrer, at flagene placeres relativt til top-row */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 10px 0; /* Afstand mellem elementerne i top-row */
+  }
+
+  /* Flagene i language-selector */
+  .language-selector {
+    position: absolute; /* Gør flagene uafhængige af andre elementer */
+    top: 15px; /* Placer dem altid 15px fra toppen */
+    left: 20px; /* Placer dem altid 20px fra venstre */
+    display: flex;
+    gap: 10px; /* Afstand mellem flagene */
+  }
+
+  .language-selector .flag {
+    width: 40px;
+    height: auto;
+    cursor: pointer;
+  }
+
+  /* Sociale medier styling */
+  .social-icons {
+    display: flex;
+    justify-content: flex-end; /* Ikoner flugter mod højre */
+    gap: 15px;
+  }
+
+  .social-icons a {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: #d5d5d5;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%; /* Runde ikoner */
+    color: #000; /* Farve for ikoner */
+    transition: all 0.5s ease; /* Glidende overgang */
+    font-size: 18px; /* Tilpas ikonstørrelse */
+  }
+
+  .social-icons a:hover {
+    color: #ffffff; /* Farve ved hover */
+    background-color: #000000; /* Lys baggrund ved hover */
+  }
+
+  /* Logo centreret uafhængigt */
+  .logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    width: 20rem;
+    height: auto;
+  }
+
+  .main-nav {
+    display: flex;
+    justify-content: center; /* Centrer navigationen */
+    gap: 20px; /* Afstand mellem links */
+    margin-top: 20px; /* Plads mellem logoet og navigationen */
+    position: relative; /* Holder navigationen under logoet */
+    z-index: 1; /* Holder navigationen synlig ovenpå andre elementer */
+  }
+
+  .main-nav a {
+    text-decoration: none;
+    color: #000;
+    font-size: 16px;
+  }
+
+  /* Dropdown styling */
+  .dropdown {
+    position: relative;
+  }
+
+  .dropdown-toggle {
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: left;
+    color: #000;
+    padding: 10px;
+    width: 100%;
+  }
+
+  .dropdown-toggle span {
+    float: right;
+  }
+
+  .dropdown-menu {
+    display: none; /* Skjul som standard */
+    position: absolute;
+    top: 100%; /* Placer under dropdown-toggle */
+    left: 0;
+    background-color: #fff;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+    z-index: 99;
+  }
+
+  .dropdown-menu li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .dropdown-menu li:last-child {
+    border-bottom: none;
+  }
+
+  .dropdown-menu li a {
+    text-decoration: none;
+    color: #000;
+    display: block;
+    width: 100%;
+  }
+
+  .dropdown-menu li a:hover {
+    background-color: #f0f0f0;
+  }
+
+  /* Fold-ud menuen aktiveret */
+  .dropdown.open .dropdown-menu {
+    display: block; /* Vis dropdown-menu */
+  }
+
+  /* Burger-menu styling */
+  .burger-menu {
+    display: none; /* Skjules som standard */
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    height: 20px;
+    width: 30px;
+    cursor: pointer;
+    z-index: 100; /* Sørg for, at den er øverst */
+  }
+
+  .burger-menu .line {
+    height: 3px;
+    width: 100%;
+    background-color: #000; /* Sort linje til burger-ikonet */
+  }
+
+  @media (max-width: 767px) {
+    /* Justeringer for små skærme */
+    .header {
+      padding: 10px 20px;
+    }
+
+    /* Reducer logoets størrelse */
+    .logo {
+      height: auto;
+    }
+
+    /* Flagene */
+    .language-selector {
+      position: absolute;
+      top: 15px;
+      left: 10px;
+      display: flex;
+      gap: 8px;
+    }
+
+    .language-selector .flag {
+      width: 30px;
+      height: auto;
+    }
+
+    /* Sociale medier */
+    .social-icons {
+      display: none; /* Sociale medier skjules på små skærme */
+    }
+
+    /* Burger-menu */
+    .burger-menu {
+      display: flex; /* Gør burger-menuen synlig */
+      flex-direction: column;
+      justify-content: space-between;
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      height: 20px;
+      width: 30px;
+      cursor: pointer;
+      z-index: 100;
+    }
+
+    .burger-menu .line {
+      height: 3px;
+      width: 100%;
+      background-color: #000;
+      transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
+    }
+
+    /* Burger-menu animation til "X" */
+    .burger-menu.active .line:nth-child(1) {
+      transform: rotate(45deg) translate(6px, 5px); /* Øverste linje */
+    }
+
+    .burger-menu.active .line:nth-child(2) {
+      opacity: 0; /* Skjul midterste linje */
+    }
+
+    .burger-menu.active .line:nth-child(3) {
+      transform: rotate(-45deg) translate(6px, -5px); /* Nederste linje */
+    }
+
+    /* Navigation */
+    .main-nav {
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      top: 0;
+      right: -100%; /* Skjult uden for skærmen */
+      height: 100%;
+      width: 250px;
+      background-color: #ffffff;
+      box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+      transition: right 0.5s ease; /* Glide ind fra højre */
+      z-index: 99;
+      padding-top: 58px;
+      justify-content: flex-start; /* Centrer navigationen */
+    }
+
+    .main-nav.active {
+      right: 0; /* Vis menuen */
+    }
+
+    .main-nav a {
+      text-decoration: none;
+      color: #000;
+      padding: 15px 0;
+      font-size: 18px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .main-nav a:hover {
+      background-color: #f0f0f0;
+    }
+
+    /* Burger-menu */
+    .burger-menu {
+      display: flex; /* Sørger for, at burger-menuen vises */
+      flex-direction: column;
+      justify-content: space-between;
+      position: absolute; /* Gør det muligt at justere placeringen */
+      top: 12px; /* Justér for at være på linje med flagene */
+      right: 10px; /* Placer i højre hjørne */
+      height: 20px;
+      width: 30px;
+      cursor: pointer;
+      z-index: 100; /* Sørger for, at den er øverst */
+    }
+
+    .burger-menu .line {
+      height: 3px;
+      width: 100%;
+      background-color: #000; /* Sort linje til burger-ikonet */
+    }
+  }
+
+  @media (max-width: 594px) {
+    /* Top-row layout */
+    .top-row {
+      display: flex;
+      align-items: center; /* Centrerer elementer vertikalt */
+      justify-content: space-between; /* Flagene til venstre, burger-menu til højre */
+
+      position: relative;
+    }
+
+    /* Flagene */
+    .language-selector {
+      display: flex;
+      gap: 10px; /* Afstand mellem flagene */
+      position: relative;
+      top: 0; /* Holder flagene på samme linje */
+    }
+
+    .language-selector .flag {
+      width: 30px; /* Reducér flagenes størrelse */
+      height: auto;
+      cursor: pointer;
+    }
+
+    .logo {
+      width: 20rem; /* Reducér logoets størrelse for små skærme */
+    }
+
+    /* Logoet */
+    .logo-link {
+      top: 10px; /* Reducer afstanden fra toppen for små skærme */
+    }
+
+    /* Sociale medier */
+    .social-icons {
+      display: none; /* Skjul sociale medier på små skærme */
+    }
+
+    /* Burger-menu */
+    .burger-menu {
+      display: flex; /* Vis burger-menuen */
+      flex-direction: column;
+      justify-content: space-between;
+      position: absolute; /* Hold burger-menuen øverst */
+      top: 15px;
+      right: 20px;
+      height: 20px;
+      width: 30px;
+      cursor: pointer;
+      z-index: 100; /* Sørg for, at den er øverst */
+    }
+
+    .burger-menu .line {
+      height: 3px;
+      width: 100%;
+      background-color: #000; /* Sort linje til burger-ikonet */
+      transition:
+        transform 0.3s ease,
+        opacity 0.3s ease; /* Glidende animation */
+    }
+
+    /* Burger-menu animation til "X" */
+    .burger-menu.active .line:nth-child(1) {
+      transform: rotate(45deg) translate(6px, 5px); /* Øverste linje */
+    }
+
+    .burger-menu.active .line:nth-child(2) {
+      opacity: 0; /* Skjul midterste linje */
+    }
+
+    .burger-menu.active .line:nth-child(3) {
+      transform: rotate(-45deg) translate(6px, -5px); /* Nederste linje */
+    }
+
+    /* Navigation */
+    .main-nav {
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      top: 0;
+      right: -100%; /* Skjult uden for skærmen */
+      height: 100%;
+      width: 250px;
+      background-color: #fff;
+      box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+      padding: 20px;
+      transition: right 0.5s ease; /* Glide ind fra højre */
+      z-index: 99;
+    }
+
+    .main-nav.active {
+      right: 0; /* Vis menuen */
+    }
+
+    .main-nav a {
+      text-decoration: none;
+      color: #000;
+      font-size: 16px; /* Juster tekststørrelsen */
+      padding: 15px 0; /* Gør links lettere at klikke på */
+      border-bottom: 1px solid #ddd;
+    }
+
+    .main-nav a:hover {
+      background-color: #f0f0f0; /* Giv en hover-effekt */
+    }
+
+    /* Burger-menu */
+    .burger-menu {
+      display: flex; /* Sørger for, at burger-menuen vises */
+      flex-direction: column;
+      justify-content: space-between;
+      position: absolute; /* Gør det muligt at justere placeringen */
+      top: 12px; /* Justér for at være på linje med flagene */
+      right: 10px; /* Placer i højre hjørne */
+      height: 20px;
+      width: 30px;
+      cursor: pointer;
+      z-index: 100; /* Sørger for, at den er øverst */
+    }
+
+    .burger-menu .line {
+      height: 3px;
+      width: 100%;
+      background-color: #000; /* Sort linje til burger-ikonet */
+    }
+  }
+
+  @media (max-width: 499px) {
+    .logo {
+      width: 15rem;
+    }
+
+    /* Flagene */
+    .language-selector {
+      display: flex;
+      gap: 10px; /* Afstand mellem flagene */
+      position: absolute; /* Sørger for, at de kan placeres korrekt */
+      top: 12px; /* Justér for at være på linje med burgermenuen */
+      left: 10px; /* Sørger for plads fra venstre */
+    }
+
+    .language-selector .flag {
+      width: 20px; /* Reducér flagenes størrelse */
+      height: auto;
+      cursor: pointer;
+    }
+
+    /* Burger-menu */
+    .burger-menu {
+      display: flex; /* Sørger for, at burger-menuen vises */
+      flex-direction: column;
+      justify-content: space-between;
+      position: absolute; /* Gør det muligt at justere placeringen */
+      top: 12px; /* Justér for at være på linje med flagene */
+      right: 10px; /* Placer i højre hjørne */
+      height: 20px;
+      width: 30px;
+      cursor: pointer;
+      z-index: 100; /* Sørger for, at den er øverst */
+    }
+
+    .burger-menu .line {
+      height: 3px;
+      width: 100%;
+      background-color: #000; /* Sort linje til burger-ikonet */
+    }
+  }
+
+  @media (max-width: 368px) {
+    /* Logoet */
+    .logo {
+      width: 12rem; /* Reducér logoets størrelse yderligere */
+    }
+
+    /* Flagene */
+    .language-selector {
+      display: flex;
+      gap: 8px; /* Reducér afstanden mellem flagene */
+      position: absolute;
+      top: 10px; /* Justér for at placere flagene korrekt */
+      left: 5px; /* Flyt flagene lidt til venstre */
+    }
+
+    .language-selector .flag {
+      width: 18px; /* Reducér flagenes størrelse */
+      height: auto;
+      cursor: pointer;
+    }
+
+    /* Burger-menu */
+    .burger-menu {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: absolute;
+      top: 10px; /* Justér for at være på linje med flagene */
+      right: 5px; /* Mindre margin fra højre */
+      height: 20px;
+      width: 30px;
+      cursor: pointer;
+      z-index: 100; /* Sørger for, at den er øverst */
+    }
+
+    .burger-menu .line {
+      height: 3px;
+      width: 100%;
+      background-color: #000; /* Sort linje til burger-ikonet */
+    }
+  }
+
+  @media (max-width: 288px) {
+    /* Navigation */
+    .main-nav {
+      display: none; /* Navigation skjules som standard */
+      flex-direction: column; /* Gør navigationen vertikal */
+      position: fixed; /* Fastgør navigationen til skærmen */
+      top: 0;
+      right: -100%; /* Skjules uden for skærmen */
+      height: 100%;
+      width: 250px;
+      background-color: #fff;
+      box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+      padding: 20px;
+      transition: right 0.5s ease; /* Glide ind fra højre */
+      z-index: 99; /* Sørg for, at den forbliver øverst */
+    }
+
+    .main-nav.active {
+      right: 0; /* Vis menuen, når den er aktiv */
+    }
+
+    .main-nav a {
+      text-decoration: none;
+      color: #000;
+      padding: 15px 0;
+      font-size: 18px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .main-nav a:hover {
+      background-color: #f0f0f0;
+    }
+
+    /* Burger-menu */
+    .burger-menu {
+      display: flex; /* Sørg for, at burger-menuen vises */
+      flex-direction: column;
+      justify-content: space-between;
+      position: absolute;
+      top: 10px; /* Juster burger-menuen for små skærme */
+      right: 10px; /* Hold afstand fra kanten */
+      height: 20px;
+      width: 30px;
+      z-index: 100; /* Sørg for, at den er øverst */
+    }
+
+    .burger-menu .line {
+      height: 3px;
+      width: 100%;
+      background-color: #000; /* Sort linje til burger-ikonet */
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const burgerMenu = document.querySelector(".burger-menu");
+    const mainNav = document.querySelector(".main-nav");
+
+    if (burgerMenu && mainNav) {
+      burgerMenu.addEventListener("click", () => {
+        burgerMenu.classList.toggle("active"); // Skift mellem normal og "X" burger-menu
+        mainNav.classList.toggle("active"); // Vis/skjul menuen
+      });
+    }
+  });
+</script>

@@ -1,0 +1,158 @@
+<footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="footer-col">
+          <h4>Find os her</h4>
+          <ul>
+            <li>Æblekrogen</li>
+            <li>2830 Virum</li>
+            <li>CVR: 2838 4548</li>
+            <li>Tlf. +45 2013 4947</li>
+            <li>robert@nordic-refletion.dk</li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Menu</h4>
+          <ul>
+            <li><a href="#">Galleri</a></li>
+            <li><a href="#">Om Os</a></li>
+            <li><a href="#">Kontakt</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Vilkår</h4>
+          <ul>
+            <li><a href="#">Handelsbetingelse</a></li>
+            <li><a href="#">Privatlivspolitik</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Sociale Medier</h4>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+  </body>
+  </html>
+  
+  <style>
+  /* Generelle indstillinger */
+  html,
+  body {
+  height: 100%; 
+  margin: 0;
+  
+  }
+  
+  * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  }
+  
+  
+  .container {
+  max-width: 1440px;
+  margin: auto;
+  }
+  
+  .row {
+  display: flex;
+  flex-wrap: wrap;
+  }
+  
+  ul {
+  list-style: none;
+  }
+  
+  /* Footer-styling */
+  .footer {
+  background-color: #3b4455;
+  padding: 70px 0;
+  color: #e8e7e8;
+  width: 100%; /* Sørger for, at footeren dækker hele bredden */
+  }
+  
+  .footer-col {
+  width: 25%;
+  padding: 20px 15px;
+  }
+  
+  .footer-col h4 {
+  font-size: 18px;
+  color: #e8e7e8;
+  
+  text-transform: capitalize;
+  margin-bottom: 35px;
+  font-weight: 500;
+  position: relative;
+  }
+  
+  .footer-col h4::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  background-color: rgba(255, 255, 255, 0.2); /* her kan vi lave en anden farve eller fjerne den  */
+  height: 2px;
+  box-sizing: border-box;
+  width: 50px;
+  }
+  
+  .footer-col ul li:not(:last-child) {
+  margin-bottom: 10px;
+  }
+  
+  .footer-col ul li a {
+  font-size: 16px;
+  text-transform: capitalize;
+  color: #e8e7e8;
+  text-decoration: none;
+  font-weight: 300;
+  display: block;
+  transition: all 0.3s ease;
+  }
+  
+  .footer-col ul li a:hover {
+  padding-left: 5px;
+  }
+  
+  .footer-col .social-links a {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 0 10px 10px 0;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  color: #ffffff;
+  transition: all 0.5s ease;
+  }
+  
+  .footer-col .social-links a:hover {
+  color: #24262b;
+  background-color: #ffffff;
+  }
+  
+  
+  @media (max-width: 767px) {
+  .footer-col {
+    width: 50%; /
+    margin-bottom: 30px;
+  }
+  }
+  
+  @media (max-width: 400px) {
+  .footer-col {
+    width: 100%; 
+  }
+  }
+  </style>
