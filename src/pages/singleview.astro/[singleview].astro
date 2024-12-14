@@ -1,8 +1,4 @@
 ---
-import Layout from "../layouts/Layout.astro";
-
-import Header from "../components/Header.astro";
-
 const data = await fetch(
   "https://shgkeoypuefkttdhspcn.supabase.co/rest/v1/NR_picturs",
   {
@@ -16,8 +12,3 @@ const data = await fetch(
 
 console.log(data);
 ---
-
-<Header />
-
-<div>Hello World</div>
-<Layout />

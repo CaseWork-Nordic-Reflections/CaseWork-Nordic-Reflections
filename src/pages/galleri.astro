@@ -1,7 +1,7 @@
 ---
-import Layout from "../layouts/Layout.astro";
-
 import Header from "../components/Header.astro";
+import Layout from "../layouts/Layout.astro";
+import SommerFugl from "../components/SommerFugl.astro";
 
 const data = await fetch(
   "https://shgkeoypuefkttdhspcn.supabase.co/rest/v1/NR_picturs",
@@ -13,11 +13,13 @@ const data = await fetch(
     },
   }
 ).then((res) => res.json());
-
-console.log(data);
 ---
 
 <Header />
+{
+  data.map((show) => {
+    return <SommerFugl data={show} />;
+  })
+}
 
-<div>Hello World</div>
 <Layout />
