@@ -11,13 +11,13 @@ export async function getStaticPaths() {
     }
   ).then((response) => response.json());
 
-  return data.map((post) => {
+  return data.map((show) => {
     return {
-      params: { slug: post.Slug },
-      props: { post },
+      params: { slug: show.slug },
+      props: { MyData: show },
     };
   });
 }
-
-console.log();
+const { MyData } = Astro.props;
+console.log(MyData);
 ---
