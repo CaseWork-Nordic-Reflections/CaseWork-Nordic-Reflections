@@ -1,3 +1,20 @@
 ---
+import SommerFugl from "../components/SommerFugl.astro";
 
+const data = await fetch(
+  "https://shgkeoypuefkttdhspcn.supabase.co/rest/v1/NR_picturs",
+  {
+    method: "GET",
+    headers: {
+      apikey:
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNoZ2tlb3lwdWVma3R0ZGhzcGNuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzQwNzkzNjYsImV4cCI6MjA0OTY1NTM2Nn0.KuVCOUZfC4In6A0IZ9Oey3JfJpaNHXiz2WUSJC-eCqg",
+    },
+  }
+).then((res) => res.json());
 ---
+
+{
+  data.map((show) => {
+    return <SommerFugl data={show} />;
+  })
+}
