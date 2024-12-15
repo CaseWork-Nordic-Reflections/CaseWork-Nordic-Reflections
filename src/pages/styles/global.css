@@ -2,5 +2,8 @@
 
     --bodytext-lineheight--rem: 1.5em;
 
-
 */
+
+body {
+  font-size: 1.125rem; /* Sætter skriftstørrelsen til 1.125rem */
+}

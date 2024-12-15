@@ -1,5 +1,5 @@
 ---
-
+import global from "../pages/styles/global.css";
 ---
 
 <div class="container">
@@ -23,7 +23,7 @@
   </div>
 </div>
 
-<div class="container">
+<div class="container_2">
   <div class="tekst2">
     <div class="wrapper">
       <h2>Retur til naturen</h2>
@@ -66,6 +66,16 @@
     </div>
   </div>
 </div>
+<h2 class="overskrift">Tidligere Donationer</h2>
+<div class="billeder">
+  <div class="skov">
+    <img src="public/Images/hjemmeside_billeder/Malling.webp" alt="" />
+  </div>
+
+  <div class="fisk">
+    <img src="public/Images/hjemmeside_billeder/Malling.webp" alt="" />
+  </div>
+</div>
 
 <style>
   /* Generel reset */
@@ -79,12 +89,40 @@
     font-family: Arial, sans-serif;
     line-height: 1.6;
     color: #333;
+    font-size: 1.125rem;
+    max-width: 1440px;
+    margin: 0 auto;
   }
 
   .container {
+    position: relative;
+    width: 100%;
+
     max-width: 1440px;
     margin: 0 auto;
-    padding: 0 40px;
+    padding-top: 3rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .container_2 {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding-top: 4rem;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .container_2 h2 {
+    padding-bottom: 1rem;
+    padding-right: 1rem;
+  }
+
+  .overskrift {
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
   .tekst1,
@@ -94,16 +132,21 @@
     gap: 20px;
   }
 
+  .foto img {
+    width: 100%;
+  }
+
   /* Citat */
   .citat {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
+    padding-top: 2rem;
   }
 
   .quote-float {
     background-color: #f9f9f9;
-    padding: 10px 15px;
+    padding: 20px 15px;
     font-style: italic;
     box-shadow: 2px 2px 8px #89ac7c;
   }
@@ -112,15 +155,52 @@
   .span {
     grid-column: 1 / -1;
     border: #89ac7c solid 2px;
-    padding: 15px;
-    margin-top: 10px;
+    margin-top: 2rem;
   }
 
   /* Billede */
-  .foto img {
+  .fisk img {
     width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: cover;
-    border-radius: 8px;
+  }
+  .skov img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .billeder {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 1440px;
+    margin: 0 auto; /* Centrerer containeren i midten */
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 2rem;
+    gap: 20px;
+  }
+
+  @media (max-width: 750px) {
+    .tekst2 {
+      display: grid;
+      grid-template-columns: 1fr; /* Skifter til én kolonne */
+      gap: 20px;
+    }
+
+    .foto {
+      grid-row: 1; /* Placerer billedet øverst */
+      grid-column: 1 / -1; /* Fylder hele bredden */
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 8px;
+      padding: 0; /* Fjerner padding */
+    }
+
+    .span {
+      margin-top: 1rem;
+      padding: 1rem;
+    }
   }
 </style>
