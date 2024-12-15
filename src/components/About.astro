@@ -1,3 +1,44 @@
 ---
 
 ---
+
+<h1>Kontakt</h1>
+<div class="container">
+  <div class="tekst">
+    <h2>Kontakt Os</h2>
+    <p>
+      Jeg maler efter alle størrelser og mål – det vigtigste for mig er, at du
+      får et maleri, du bliver glad for.
+    </p>
+    <p>Fortæl mig om dine ønsker, så finder vi sammen den perfekte løsning.</p>
+    <p>Tlf. +45 20 13 49 47 robert@nordic-relections.dk</p>
+  </div>
+  <div class="foto">
+    <img src="/public/Images/hjemmeside_billeder/Malling.webp" />
+  </div>
+</div>
+
+<style>
+  H1 {
+    display: flex;
+    justify-content: center;
+  }
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    max-width: 1200px;
+  }
+
+  .foto {
+    width: 300px; /* Fastsætter containerens bredde */
+    height: 300px; /* Fastsætter containerens højde */
+    display: flex;
+  }
+
+  .foto img {
+    width: 100%; /* Gør billedets bredde til 100% af containerens bredde */
+    height: 100%; /* Gør billedets højde til 100% af containerens højde */
+    object-fit: cover; /* Bevarer proportioner og fylder hele containeren */
+  }
+</style>
