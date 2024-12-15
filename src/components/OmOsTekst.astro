@@ -1,0 +1,126 @@
+---
+
+---
+
+<div class="container">
+  <h2>Billeder med hver sin historie</h2>
+  <div class="tekst1">
+    <div>
+      <p>
+        Vores vision er at skabe billeder, der føles levende og naturlige –
+        billeder, der bringer naturens frihed og lys ind i hjemmet. Akvarel er
+        en leg med nuancer og balancer, hvor hvert penselstrøg skal fastholde
+        det spontane og organiske.
+      </p>
+    </div>
+    <div>
+      <p>
+        Det handler om at fange øjeblikkets sjæl uden at overdøve farvernes
+        naturlige glød. Jeg ønsker, at mine værker skal skabe rum for
+        refleksion, ro og en forbindelse til naturens skønhed.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="tekst2">
+    <div class="wrapper">
+      <h2>Retur til naturen</h2>
+      <p>
+        Hvert år udvælger jeg 2-3 projekter, som jeg bidrager til, og jeg
+        inviterer dig til at være med til at vælge det endelige projekt.
+      </p>
+
+      <!-- Citat -->
+      <div class="citat">
+        <p>
+          <b>Skov i Vindinge</b><br />
+          Tidligere har jeg blandt andet støttet et skovprojekt i Roskilde, hvor
+          der blev plantet 10.000 træer.
+        </p>
+        <div class="quote-float">
+          <blockquote>
+            "Naturen er ikke et sted, vi besøger. Den er vores hjem."
+          </blockquote>
+        </div>
+      </div>
+
+      <!-- Ørred i Horsens Å -->
+      <div class="span">
+        <p>
+          <b>Ørred i Horsens Å</b><br />
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse, quasi saepe!
+          Ad hic consequatur cupiditate eligendi mollitia non exercitationem ea,
+          dolores voluptates facilis eaque rerum necessitatibus cum esse! In, placeat.
+        </p>
+      </div>
+    </div>
+
+    <!-- Billedet -->
+    <div class="foto">
+      <img
+        src="/public/Images/hjemmeside_billeder/Skov_med_kvinde.png"
+        alt="Skov med kvinde"
+      />
+    </div>
+  </div>
+</div>
+
+<style>
+  /* Generel reset */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+  }
+
+  .container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  .tekst1,
+  .tekst2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  /* Citat */
+  .citat {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .quote-float {
+    background-color: #f9f9f9;
+    padding: 10px 15px;
+    font-style: italic;
+    box-shadow: 2px 2px 8px #89ac7c;
+  }
+
+  /* Ørred i Horsens Å */
+  .span {
+    grid-column: 1 / -1;
+    border: #89ac7c solid 2px;
+    padding: 15px;
+    margin-top: 10px;
+  }
+
+  /* Billede */
+  .foto img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+</style>
