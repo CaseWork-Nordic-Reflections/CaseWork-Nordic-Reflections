@@ -1,44 +1,157 @@
----
-
----
-
 <h1>Kontakt</h1>
-<div class="container">
-  <div class="tekst">
-    <h2>Kontakt Os</h2>
-    <p>
-      Jeg maler efter alle størrelser og mål – det vigtigste for mig er, at du
-      får et maleri, du bliver glad for.
-    </p>
-    <p>Fortæl mig om dine ønsker, så finder vi sammen den perfekte løsning.</p>
-    <p>Tlf. +45 20 13 49 47 robert@nordic-relections.dk</p>
-  </div>
-  <div class="foto">
-    <img src="/public/Images/hjemmeside_billeder/Malling.webp" />
+<div class="wrapper">
+  <div class="container">
+    <div class="tekst">
+      <h2>Kontakt Os</h2>
+      <p>
+        Jeg maler efter alle størrelser og mål – det vigtigste for mig er, at du
+        får et maleri, du bliver glad for.
+      </p>
+      <p>
+        Fortæl mig om dine ønsker, så finder vi sammen den perfekte løsning.
+      </p>
+      <p>Tlf. +45 20 13 49 47 robert@nordic-relections.dk</p>
+    </div>
+    <div class="foto">
+      <img src="/public/Images/hjemmeside_billeder/RB.webp" />
+    </div>
   </div>
 </div>
 
+<form>
+  <label for="name"
+    >Navn:
+    <input id="name" type="text" placeholder="Lars Larsen" />
+  </label>
+  <label for="email"
+    >Email:
+    <input id="email" type="email" placeholder="lars@example.com" />
+  </label>
+  <label for="beskrivelse"
+    >Beskrivelse:
+    <textarea id="beskrivelse" placeholder="Skriv din besked her..."></textarea>
+  </label>
+  <input id="send" type="submit" value="Send" />
+</form>
+
 <style>
-  H1 {
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  h1 {
+    margin-top: 3rem;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .wrapper {
     display: flex;
     justify-content: center;
+    align-items: center;
   }
+
+  /* Container styling */
   .container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 10px;
+    gap: 20px;
     max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
   }
 
+  /* Tekst styling */
+  .tekst {
+    line-height: 1.6;
+  }
+
+  .tekst p {
+    margin-bottom: 10px;
+  }
+
+  /* Foto styling */
   .foto {
-    width: 300px; /* Fastsætter containerens bredde */
-    height: 300px; /* Fastsætter containerens højde */
     display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .foto img {
-    width: 100%; /* Gør billedets bredde til 100% af containerens bredde */
-    height: 100%; /* Gør billedets højde til 100% af containerens højde */
-    object-fit: cover; /* Bevarer proportioner og fylder hele containeren */
+    width: 100%;
+    height: auto;
+    max-width: 450px;
+    object-fit: cover;
+    border-radius: 8px; /* Runde hjørner */
+    max-width: none; /* Fjern begrænsning på max-width */
+  }
+
+  /* Form styling */
+  form {
+    width: 70vw;
+    max-width: 50rem;
+    margin: 0 auto;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #000;
+    color: #000;
+    font-size: 1rem;
+    line-height: 1.4;
+    resize: vertical; /* Tillader højdejustering */
+  }
+
+  #beskrivelse {
+    height: 150px; /* Fast højde */
+    text-align: left; /* Venstrejustering af tekst */
+    overflow-y: auto; /* Scrollbar hvis nødvendigt */
+  }
+
+  #send {
+    display: block;
+    width: 50%;
+    max-width: 200px;
+    margin: 1rem auto;
+    padding: 0.5rem;
+    text-align: center;
+    font-size: 1rem;
+    border: 1px solid #000;
+    cursor: pointer;
+  }
+
+  /* Responsiv styling for mobil */
+  @media (max-width: 768px) {
+    .container {
+      grid-template-columns: 1fr; /* Enkelt kolonne */
+    }
+
+    h1 {
+      margin-bottom: 3rem;
+      margin-top: 1rem;
+    }
+
+    .foto {
+      order: 2; /* Flytter billedet under teksten */
+      margin-top: 20px; /* Luft mellem tekst og billede */
+    }
+
+    form {
+      margin-top: 20px; /* Luft mellem billedet og formen */
+
+      width: 80vw;
+      max-width: 50rem;
+      margin: 0 auto;
+    }
   }
 </style>
