@@ -1,0 +1,19 @@
+---
+const { data } = Astro.props;
+console.log(data);
+---
+
+<!-- <img class="maleri" src={`public/Images/hjemmeside_billeder/${url}`} /> -->{
+  data.kategori === "fisk" && (
+    <div class="container">
+      <a href={`single/${data.id}`}>
+        <article>
+          <h1>{data.id}</h1>
+          <h2>{data.titel}</h2>
+          <p>{data.geopositioner}</p>
+          <p>{data.kategori}</p>
+        </article>
+      </a>
+    </div>
+  )
+}
