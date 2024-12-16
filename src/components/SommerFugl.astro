@@ -3,7 +3,7 @@ const { data } = Astro.props;
 console.log(data);
 ---
 
-<a href={`shows/${data.Slug}`}>
+<a href={`single/${data.Slug}`}>
   <article>
     <h1>{data.id}</h1>
     <h2>{data.titel}</h2>
