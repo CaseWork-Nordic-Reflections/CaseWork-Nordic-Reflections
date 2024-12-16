@@ -13,7 +13,7 @@ export async function getStaticPaths() {
 
   return data.map((show) => {
     return {
-      params: { slug: show.slug },
+      params: { slug: show.Slug },
       props: { MyData: show },
     };
   });
