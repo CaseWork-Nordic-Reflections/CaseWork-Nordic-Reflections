@@ -1,23 +1,28 @@
 ---
+import Layout from "../../layouts/Layout.astro";
+
 export async function getStaticPaths() {
   const data = await fetch(
     "https://shgkeoypuefkttdhspcn.supabase.co/rest/v1/NR_picturs",
     {
-      method: "GET",
       headers: {
         apikey:
           "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNoZ2tlb3lwdWVma3R0ZGhzcGNuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzQwNzkzNjYsImV4cCI6MjA0OTY1NTM2Nn0.KuVCOUZfC4In6A0IZ9Oey3JfJpaNHXiz2WUSJC-eCqg",
       },
     }
-  ).then((response) => response.json());
+  ).then((res) => res.json());
 
-  return data.map((show) => {
-    return {
-      params: { slug: show.Slug },
-      props: { MyData: show },
-    };
-  });
+  return data.map((produkt) => ({
+    params: { id: produkt.id },
+    props: { produkt },
+  }));
 }
-const { MyData } = Astro.props;
-console.log(MyData);
+
+const { produkt } = Astro.props;
 ---
+
+<Layout>
+  <h1>{produkt.titel}</h1>
+  <p>{produkt.kategori}</p>
+  <p>{produkt.geopositioner}</p>
+</Layout>
