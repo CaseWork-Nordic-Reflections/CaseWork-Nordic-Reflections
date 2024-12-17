@@ -3,49 +3,27 @@ const { data } = Astro.props;
 console.log(data);
 ---
 
-<!-- <img class="maleri" src={`public/Images/hjemmeside_billeder/${url}`} /> -->
-<div class="container">
-  <div>
-    {
-      data.id === 1 && (
-        <a href={`single/${data.id}`}>
-          <img
-            class="maleri"
-            src={`public/Images/hjemmeside_billeder/${data.url}`}
-          />
-          <h2>{data.titel}</h2>
-          <p>{data.geopositioner}</p>
-          <p>{data.Slug}</p>
-        </a>
-      )
-    }
-  </div>
-
-  <div>
-    {
-      data.id === 5 && (
-        <a href={`single/${data.id}`}>
-          <img
-            class="maleri"
-            src={`public/Images/hjemmeside_billeder/${data.url}`}
-          />
-          <h2>{data.titel}</h2>
-          <p>{data.geopositioner}</p>
-          <p>{data.Slug}</p>
-        </a>
-      )
-    }
-  </div>
-</div>
+{
+  data.kategori === `sommerfugle` && (
+    <div class="image-container">
+      <a href={`single/${data.id}`}>
+        <img
+          class="maleri"
+          src={`public/Images/hjemmeside_billeder/${data.url}`}
+          alt={data.titel}
+        />
+      </a>
+      <h2>{data.titel}</h2>
+      <p>{data.geopositioner}</p>
+      <p>{data.Slug}</p>
+    </div>
+  )
+}
 
 <style>
-  .container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-
   .maleri {
     max-width: 20rem;
     height: auto;
+    display: block;
   }
 </style>
