@@ -1,8 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
-
 import Header from "../components/Header.astro";
-
+import HeroImg from "../components/HeroImg.astro";
+import ForsideTexst from "../components/ForsideTexst.astro";
+import ForsideGalleri from "../components/ForsideGalleri.astro";
 const data = await fetch(
   "https://shgkeoypuefkttdhspcn.supabase.co/rest/v1/NR_picturs",
   {
@@ -18,6 +19,7 @@ console.log(data);
 ---
 
 <Header />
-
-<div>Hello World</div>
+<HeroImg />
+<ForsideTexst />
+<ForsideGalleri />
 <Layout />

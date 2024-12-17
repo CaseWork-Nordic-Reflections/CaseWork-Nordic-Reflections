@@ -1,0 +1,70 @@
+---
+
+---
+
+<div class="container">
+  <div class="grid-container">
+    <!-- Kolonne 1 -->
+    <div class="grid-item">
+      <img
+        src="/public/Images/hjemmeside_billeder/Taskekrabbe_Copyright_www.nordic-reflections.dk_-scaled.webp"
+        alt="Fisk"
+      />
+      <a href="/galleri" class="btn">Se mere</a>
+    </div>
+
+    <!-- Kolonne 2 -->
+    <div class="grid-item">
+      <img
+        src="/public/Images/hjemmeside_billeder/Platantrae_Nordic_Reflections_Copyright_1-1_a.webp"
+        alt="Træ"
+      />
+      <a href="/galleri" class="btn">Se mere</a>
+    </div>
+
+    <!-- Kolonne 3 -->
+    <div class="grid-item">
+      <img
+        src="/public/Images/hjemmeside_billeder/Admiral_Copyright_Robert-Jensen_nordic-reflections.dk_75x9cm.webp"
+        alt="Sommerfugl"
+      />
+      <a href="/galleri" class="btn">Se mere</a>
+    </div>
+  </div>
+</div>
+
+<style>
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* Tre lige store kolonner */
+    gap: 2rem; /* Afstand mellem kolonnerne */
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .grid-item {
+    text-align: center;
+  }
+
+  .grid-item img {
+    width: 100%; /* Fyld bredden af containeren */
+    height: 250px; /* Fast højde for alle billeder */
+    object-fit: cover; /* Beskær billedet for at udfylde containeren */
+    border-radius: 5px; /* Rundede hjørner */
+  }
+
+  .btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1.5rem;
+    background-color: #6c8e67; /* Grøn farve */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+
+  .btn:hover {
+    background-color: #59744e;
+  }
+</style>

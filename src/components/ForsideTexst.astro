@@ -1,0 +1,55 @@
+---
+
+---
+
+<div class="container">
+  <div class="tekst">
+    <div class="">
+      <h2>Vores vision!</h2>
+      <p>
+        Velkommen til en visuel rejse gennem den danske og nordiske natur. Hvert
+        billede er et øjebliksrefleksion – et lille tidsbillede, der fanger
+        stedets unikke historie og lys. Jeg noterer også stedet, som
+        GPS-koordinater, for min fangst eller observation. Jeg håber, du vil
+        nyde (na)turen, og at billederne kan give dig nogle pauser. Rejsen er
+        kun lige begyndt.
+      </p>
+    </div>
+    <div class="natur">
+      <h2>Vi Giver Tilbage til Naturen</h2>
+      <p>
+        Med naturen som min største inspirationskilde giver jeg tilbage:5 % af
+        årets indtjening går til initiativet Retur til Natur. Bidragene støtter
+        projekter, der plejer og genopretter naturen.
+      </p>
+    </div>
+  </div>
+  <div class='foto"'>
+    <img src="/public/Images/hjemmeside_billeder/maler_vaerksted.webp" />
+  </div>
+</div>
+
+<style>
+  .container {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  img {
+    width: 100%; /* Gør billedet responsivt */
+    height: auto; /* Bevarer billedets proportioner */
+    max-height: 32rem; /* Sæt en maks-højde */
+    object-fit: cover; /* Sikrer, at billedet beskæres korrekt, hvis nødvendigt */
+  }
+
+  @media (max-width: 1050px) {
+    .natur {
+      grid-column: span 2; /* Elementet spænder over begge kolonner */
+    }
+  }
+</style>
