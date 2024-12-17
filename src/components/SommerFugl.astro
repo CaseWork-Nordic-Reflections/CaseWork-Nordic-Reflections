@@ -3,27 +3,55 @@ const { data } = Astro.props;
 console.log(data);
 ---
 
-{
-  data.kategori === `sommerfugle` && (
-    <div class="image-container">
-      <a href={`single/${data.id}`}>
-        <img
-          class="maleri"
-          src={`public/Images/hjemmeside_billeder/${data.url}`}
-          alt={data.titel}
-        />
-      </a>
-      <h2>{data.titel}</h2>
-      <p>{data.geopositioner}</p>
-      <p>{data.Slug}</p>
-    </div>
-  )
-}
+<div class="grid-container">
+  {
+    data.kategori === `sommerfugle` && (
+      <div class="grid-item">
+        <a href={`single/${data.id}`}>
+          <img
+            class="maleri"
+            src={`public/Images/hjemmeside_billeder/${data.url}`}
+            alt={data.titel}
+          />
+        </a>
+        <h2>{data.titel}</h2>
+        <p>{data.geopositioner}</p>
+        <p>{data.Slug}</p>
+      </div>
+    )
+  }
+</div>
 
 <style>
+  /* Definer hele gridet */
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* Tre kolonner */
+    gap: 1rem; /* Afstand mellem elementerne */
+    padding: 1rem; /* Luft rundt om gridet */
+    margin: 0 auto;
+    max-width: 1200px; /* Sikrer en passende bredde */
+  }
+
+  /* Style hver grid-item */
+  .grid-item {
+    text-align: center; /* Centrerer alt indhold */
+    background-color: #f9f9f9; /* Lys baggrund */
+    padding: 1rem; /* Indvendig afstand */
+    border: 1px solid #ddd; /* Let kant */
+    border-radius: 8px; /* Afrundede hjørner */
+  }
+
+  /* Sikrer at billeder vises korrekt */
   .maleri {
-    max-width: 20rem;
+    max-width: 100%; /* Fylder containeren */
     height: auto;
-    display: block;
+    margin-bottom: 1rem; /* Luft under billedet */
+  }
+
+  /* Tekstafstand */
+  h2,
+  p {
+    margin: 0.5rem 0;
   }
 </style>
