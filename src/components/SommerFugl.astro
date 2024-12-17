@@ -3,11 +3,49 @@ const { data } = Astro.props;
 console.log(data);
 ---
 
-<a href={`single/${data.id}`}>
-  <article>
-    <h1>{data.id}</h1>
-    <h2>{data.titel}</h2>
-    <p>{data.geopositioner}</p>
-    <p>{data.Slug}</p>
-  </article>
-</a>
+<!-- <img class="maleri" src={`public/Images/hjemmeside_billeder/${url}`} /> -->
+<div class="container">
+  <div>
+    {
+      data.id === 1 && (
+        <a href={`single/${data.id}`}>
+          <img
+            class="maleri"
+            src={`public/Images/hjemmeside_billeder/${data.url}`}
+          />
+          <h2>{data.titel}</h2>
+          <p>{data.geopositioner}</p>
+          <p>{data.Slug}</p>
+        </a>
+      )
+    }
+  </div>
+
+  <div>
+    {
+      data.id === 5 && (
+        <a href={`single/${data.id}`}>
+          <img
+            class="maleri"
+            src={`public/Images/hjemmeside_billeder/${data.url}`}
+          />
+          <h2>{data.titel}</h2>
+          <p>{data.geopositioner}</p>
+          <p>{data.Slug}</p>
+        </a>
+      )
+    }
+  </div>
+</div>
+
+<style>
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .maleri {
+    max-width: 20rem;
+    height: auto;
+  }
+</style>

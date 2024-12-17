@@ -1,5 +1,8 @@
 ---
+import Fisk from "../components/Fisk.astro";
+import Header from "../components/Header.astro";
 import SommerFugl from "../components/SommerFugl.astro";
+import Layout from "../layouts/Layout.astro";
 
 const data = await fetch(
   "https://shgkeoypuefkttdhspcn.supabase.co/rest/v1/NR_picturs",
@@ -13,8 +16,17 @@ const data = await fetch(
 ).then((res) => res.json());
 ---
 
-{
-  data.map((show) => {
-    return <SommerFugl data={show} />;
-  })
-}
+<Layout>
+  <Header />
+  {
+    data.map((show) => {
+      return <SommerFugl data={show} />;
+    })
+  }
+
+  {
+    data.map((show) => {
+      return <Fisk data={show} />;
+    })
+  }
+</Layout>
