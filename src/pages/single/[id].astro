@@ -1,5 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
 
 export async function getStaticPaths() {
   const data = await fetch(
@@ -22,13 +23,68 @@ const { produkt } = Astro.props;
 ---
 
 <Layout>
-  <h1>{produkt.titel}</h1>
-  <p>{produkt.kategori}</p>
-  <p>{produkt.geopositioner}</p>
-</Layout>
+  <Header />
+  <div class="overskrift">
+    <h1>Hvor kommer motiverne fra ?</h1>
+    <h2>{produkt.titel}</h2>
+    <p>{produkt.info}</p>
+  </div>
+  <div>
+    <div class="maleri-container">
+      <img
+        class="maleri"
+        src={`../public/Images/hjemmeside_billeder/${produkt.url}`}
+        alt="Produktbillede"
+      />
+      <div class="size">
+        <h3>{produkt.size}</h3>
+      </div>
+    </div>
+  </div>
 
-<style>
-  h1 {
-    color: brown;
-  }
-</style>
+  <div class="geo">
+    <img
+      class="maleri"
+      src={`../public/Images/hjemmeside_billeder/${produkt.Kort}`}
+      alt="Produktbillede"
+    />
+  </div>
+
+  <style>
+    img {
+      max-width: 100%; /* Sørger for, at billedet aldrig overstiger containerens bredde */
+      width: 100%; /* Fylder hele containerens bredde */
+      height: auto; /* Bevarer billedets proportioner */
+      margin: 0 auto; /* Centrerer billedet horisontalt */
+      max-height: 700px; /* Sæt en max-højde, hvis nødvendigt, for at undgå for store billeder */
+      object-fit: contain; /* Sørger for, at billedet skaleres uden at blive beskåret */
+    }
+    .overskrift {
+      color: brown;
+
+      margin-top: 3rem;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .maleri-container {
+      display: flex;
+      flex-direction: column; /* Sørger for, at elementerne stables vertikalt */
+      align-items: flex-start; /* Venstrejusterer indholdet */
+      max-width: 700px; /* Begrænser bredden, hvis nødvendigt */
+      margin: 0 auto; /* Centrerer hele containeren */
+    }
+
+    .maleri {
+      display: block; /* Sørger for, at billedet ikke påvirkes af linjeelementer */
+      max-width: 100%; /* Sørger for, at billedet ikke overstiger containerens bredde */
+      height: auto; /* Bevarer proportioner */
+    }
+
+    .size {
+      margin-top: 10px; /* Lidt afstand mellem billede og tekst */
+      font-size: 1rem; /* Standard skriftstørrelse */
+      color: #333; /* En mørk grå farve for bedre læsbarhed */
+    }
+  </style>
+</Layout>
