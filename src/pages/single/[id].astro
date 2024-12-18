@@ -44,47 +44,124 @@ const { produkt } = Astro.props;
 
   <div class="geo">
     <img
-      class="maleri"
+      class="geo-position"
       src={`../public/Images/hjemmeside_billeder/${produkt.Kort}`}
-      alt="Produktbillede"
+      alt="Geo"
     />
+    <div class="geo_container">
+      <img
+        class="geo_img"
+        src={`../public/Images/hjemmeside_billeder/${produkt.url}`}
+        alt="Produktbillede"
+      />
+      <div class="geo_kordinater">
+        <h2>{produkt.titel}</h2>
+        <p>{produkt.geopositioner}</p>
+
+        <div class="geo_tekst">
+          <p>{produkt.info}</p>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <style>
-    img {
-      max-width: 100%; /* Sørger for, at billedet aldrig overstiger containerens bredde */
-      width: 100%; /* Fylder hele containerens bredde */
-      height: auto; /* Bevarer billedets proportioner */
-      margin: 0 auto; /* Centrerer billedet horisontalt */
-      max-height: 700px; /* Sæt en max-højde, hvis nødvendigt, for at undgå for store billeder */
-      object-fit: contain; /* Sørger for, at billedet skaleres uden at blive beskåret */
-    }
-    .overskrift {
-      color: brown;
-
-      margin-top: 3rem;
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-
-    .maleri-container {
-      display: flex;
-      flex-direction: column; /* Sørger for, at elementerne stables vertikalt */
-      align-items: flex-start; /* Venstrejusterer indholdet */
-      max-width: 700px; /* Begrænser bredden, hvis nødvendigt */
-      margin: 0 auto; /* Centrerer hele containeren */
-    }
-
-    .maleri {
-      display: block; /* Sørger for, at billedet ikke påvirkes af linjeelementer */
-      max-width: 100%; /* Sørger for, at billedet ikke overstiger containerens bredde */
-      height: auto; /* Bevarer proportioner */
-    }
-
-    .size {
-      margin-top: 10px; /* Lidt afstand mellem billede og tekst */
-      font-size: 1rem; /* Standard skriftstørrelse */
-      color: #333; /* En mørk grå farve for bedre læsbarhed */
-    }
-  </style>
 </Layout>
+
+<style>
+  .geo_tekst p {
+    padding-top: 1vw;
+  }
+  .geo_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: absolute;
+    top: 145%;
+    left: 65%;
+    transform: translate(-50%, -50%);
+    color: #000000;
+    border: #000000 2px solid;
+    text-align: center;
+    z-index: 10;
+
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-size: 1.5rem;
+    line-height: 1.4;
+  }
+
+  .geo_container h2 {
+    font-size: 2vw;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .geo_container p {
+    font-size: 1.3vw;
+    line-height: 1.5;
+    margin: 0;
+  }
+  img {
+    max-width: 100%; /* Sørger for, at billedet aldrig overstiger containerens bredde */
+    width: 100%; /* Fylder hele containerens bredde */
+    height: auto; /* Bevarer billedets proportioner */
+    margin: 0 auto; /* Centrerer billedet horisontalt */
+    max-height: 700px; /* Sæt en max-højde, hvis nødvendigt, for at undgå for store billeder */
+    object-fit: contain; /* Sørger for, at billedet skaleres uden at blive beskåret */
+  }
+  .overskrift {
+    margin-top: 3rem;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .maleri-container {
+    display: flex;
+    flex-direction: column; /* Sørger for, at elementerne stables vertikalt */
+    align-items: flex-start; /* Venstrejusterer indholdet */
+    max-width: 700px; /* Begrænser bredden, hvis nødvendigt */
+    margin: 0 auto; /* Centrerer hele containeren */
+  }
+
+  .maleri {
+    display: block; /* Sørger for, at billedet ikke påvirkes af linjeelementer */
+    max-width: 100%; /* Sørger for, at billedet ikke overstiger containerens bredde */
+    height: auto; /* Bevarer proportioner */
+  }
+
+  .size {
+    margin-top: 10px; /* Lidt afstand mellem billede og tekst */
+    font-size: 1rem; /* Standard skriftstørrelse */
+    color: #333; /* En mørk grå farve for bedre læsbarhed */
+  }
+
+  .geo-position {
+    width: 100%; /* Fylder hele containerens bredde */
+    margin: 0 auto; /* Centrerer billedet horisontalt */
+    object-fit: contain;
+  }
+
+  @media (max-width: 766px) {
+    .geo_container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      position: absolute;
+      top: 135%;
+      left: 65%;
+      transform: translate(-50%, -50%);
+      color: #000000;
+      border: #000000 2px solid;
+      text-align: center;
+      z-index: 10;
+
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      font-size: 1.5rem;
+      line-height: 1.4;
+    }
+
+    .geo_container h2 {
+      font-size: 2vw;
+      line-height: 1.5;
+      margin: 0;
+    }
+  }
+</style>
