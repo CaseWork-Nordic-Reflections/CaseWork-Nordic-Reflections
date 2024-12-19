@@ -5,60 +5,33 @@ const { kategori } = Astro.props;
 console.log(data);
 ---
 
-<section class="gallery-section" id="sommerfugle">
-  <h1>Sommerfugle</h1>
-  <div class="gallery-grid">
-      <div class="image-container">
-          <img src="images/kejserkaabe.webp" alt="Kejserkåbe">
-          <h2>Kejserkåbe</h2>
-          <p>En majestætisk sommerfugl, der flyver frit i naturen.</p>
-      </div>
-      <div class="image-container">
-          <img src="images/admiral.webp" alt="Admiral">
-          <h2>Admiral</h2>
-          <p>En flot admiral-sommerfugl i solskin.</p>
-      </div>
-      <div class="image-container">
-          <img src="images/Dagpaafugleoeje.webp" alt="Dagpåfugleøje">
-          <h2>Dagpåfugleøje</h2>
-          <p>Sommerfuglens smukke mønster på vingerne.</p>
-      </div>
-      <div class="image-container">
-          <img src="images/Graesrandoeje.webp" alt="Græsrandøje">
-          <h2>Græsrandøje</h2>
-          <p>En sommerfugl, der findes i åbne enge og græsmarker.</p>
-      </div>
-      <div class="image-container">
-          <img src="images/NaedensTakvinge.webp" alt="Nædens Takvinge">
-          <h2>Nædens Takvinge</h2>
-          <p>En sjælden sommerfugl med utroligt smukke mønstre.</p>
-      </div>
-      <div class="image-container">
-          <img src="images/Soergekaabe.webp" alt="Sørgekåbe">
-          <h2>Sørgekåbe</h2>
-          <p>En elegant sommerfugl med mørke vinger.</p>
-      </div>
-      <div class="image-container">
-          <img src="images/admiral.webp" alt="Admiral">
-          <h2>Admiral</h2>
-          <p>En flot admiral-sommerfugl i solskin.</p>
-      </div>
-      <div class="image-container">
-          <img src="images/kejserkaabe.webp" alt="Kejserkåbe">
-          <h2>Kejserkåbe</h2>
-          <p>En majestætisk sommerfugl, der flyver frit i naturen.</p>
-      </div>
-      <div class="image-container">
-          <img src="images/Citronsommerfugl.webp" alt="Citronsommerfugl">
-          <h2>Citronsommerfugl</h2>
-          <p>En solrig sommerfugl, der bringer liv til haven.</p>
-      </div>
-  </div>
+<section class="gallery-section" id="natur">
+    <h2>Natur</h2>
+    <div class="two-columns">
+        <div class="left-column">
+            <div class="image-container">
+                <img src="Images/Fyrretrae_Nordic_Reflections_Copyright_1-1_b.webp" alt="Fyrretræ" class="side-image">
+                <h2>Fyrretræ i naturen</h2>
+                <p>Et fyrretræ præget af tidens gang.</p>
+            </div>
+            <div class="image-container">
+                <img src="Images/Platantrae_Nordic_Reflections_Copyright_1-1_a.webp" alt="Platantræet" class="side-image">
+                <h2>Platantræet</h2>
+                <p>Platantræet, der står stolt i landskabet.</p>
+            </div>
+        </div>
+        <div class="right-column">
+            <div class="image-container">
+                <img src="Images/Netstokket.webp" alt="Netstokket Indigoroerhat" class="right-image">
+                <h2>Netstokket Indigoroerhat</h2>
+                <p>En smuk og unik plante i naturen.</p>
+            </div>
+        </div>
+    </div>
 </section>
-</div>
 
-<style>
-  .gallery-section {
+  <style>
+    .gallery-section {
     width: 100%;
     height: 100vh; /* Fylder hele højden af skærmen */
     padding: 40px 0;
@@ -192,5 +165,4 @@ console.log(data);
         padding-bottom: 25px;
     }
 }
-
-</style>
+  </style>

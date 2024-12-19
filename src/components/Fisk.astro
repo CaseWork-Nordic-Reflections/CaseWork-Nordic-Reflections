@@ -1,34 +1,191 @@
 ---
 const { data } = Astro.props;
-const { navn } = Astro.props;
-const { kategori } = Astro.props;
-console.log(data);
+// const { navn } = Astro.props;
+// const { kategori } = Astro.props;
+console.log("DATA",data);
 ---
+<h1>HEJ data</h1>
 
-<!-- <img class="maleri" src={`public/Images/hjemmeside_billeder/${url}`} /> --><!-- {
-  data.id === 1 && (
-    <div class="container">
-      <a href={`single/${data.id}`}>
-        <article>
-          <h1>{data.id}</h1>
-          <h2>{data.titel}</h2>
-          <p>{data.geopositioner}</p>
-          <p>{data.kategori}</p>
-        </article>
-      </a>
-    </div>
-  )
-} -->{
-  data.kategori === `fisk` && (
-    <a href={`single/${data.id}`}>
-      <article>
-        <img
-          class="maleri"
-          src={`public/Images/hjemmeside_billeder/${data.url}`}
-        />
-        <h1>{data.id}</h1>
-        <h2>{data.titel}</h2>
-      </article>
-    </a>
-  )
+<img class="maleri" src={"Images/hjemmeside_billeder/"+data.url} />;
+<!-- {data.map((fisk)=>{
+  if (fisk.kategori ==="fisk"){
+  return  <img class="maleri" src={`Images/hjemmeside_billeder/${fisk.url}`} />;
+  }
+})}  -->
+<!-- 
+<div id="gallery">
+  <h1>Et glimt af naturen</h1>
+  <p>Jeg vil invitere dig med på en kærligheds- og beundringsrejse i den danske og nordiske natur. <br> Mine billeder er en plads til pauser og refleksioner – en hyldest til naturens historie, lys og magi. 
+  Farver er ikke bare maling fra en tube – de lever. 
+  Når jeg maler, behandler jeg farverne med respekt for at give hovedpersonen liv på papiret. <br> Hvert værk er bygget op, så det opleves abstrakt tæt på, men naturalistisk på afstand.</p>
+
+  <section class="gallery-section" id="havet">
+      <h1>Havet</h1>
+      <div class="image-row">
+        <h1>Hallo {data.url}</h1>   
+
+          <div class="image-container">
+            {
+              data.id === 10 && (
+                <a href={`single/${data.id}`}>
+              
+                    <img
+                      class="maleri"
+                      src={`Images/hjemmeside_billeder/${data.url}`}
+                    />
+               
+                </a>
+              )
+            }
+            <h2>Makrel i havet</h2>
+              <p>Et billede af den smukke makrel i dens naturlige element.</p>
+          </div>
+          <div class="image-container">
+              <img src="Images/Laks_Oeresund_Copyright_Robert-Jensen_nordic-reflections.dk_107x52cm-e1693314106369.webp" alt="Laks" class="side-image">
+              <h2>Laks i Øresund</h2>
+              <p>En elegant laks svømmer gennem Øresund.</p>
+          </div>
+      </div>
+      <div class="image-container">
+          <img src="Images/Blaafinnet_Tun_Nordsoeen_Copyright_Robert-Jensen_nordic-reflections.dk_260x120cm-scaled.webp" alt="Blåfinnet tun" class="large-image">
+          <h2>Blåfinnet tun i Nordsøen</h2>
+          <p>Storslået natur og dyreliv i det kolde hav.</p>
+      </div>
+  </section> -->
+
+  <style>
+    .gallery-section {
+    width: 100%;
+    height: 100vh; /* Fylder hele højden af skærmen */
+    padding: 40px 0;
+    box-sizing: border-box;
 }
+
+#gallery h1 {
+    font-family: "Playfair Display", serif;
+    font-size: 3em;
+    text-align: center;
+    padding-top: 25px;
+    padding-bottom: 15px;
+    color: #000;
+}
+
+#gallery h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 1.5em;
+    text-align: center;
+    color: #000;
+    
+}
+
+#gallery p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.8em;
+    width: 55%;
+    margin: 0 auto; /* Centrerer elementet horisontalt */
+    text-align: center; /* Centrerer teksten inden i elementet */
+    color: #000;
+    padding-bottom: 25px;
+}
+
+#havet, #natur, #sommerfugle {
+    width: 100%;
+    height: auto;
+}
+
+.image-row {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.image-container {
+    text-align: center;
+}
+
+.side-image, .large-image, .right-image {
+    width: 70%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.right-image {
+    width: 70%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 150px;
+}
+
+.large-image {
+    margin: 20px auto;
+    display: block;
+}
+
+.two-columns {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 10% auto;
+}
+
+.left-column, .right-column {
+    width: 45%;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    justify-content: center;
+    align-content: center;
+    max-width: 80%;
+    margin: 20px auto;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Mobile version */
+@media (max-width: 768px) {
+    .gallery-section {
+        padding: 20px 0;
+    }
+
+    .image-row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .side-image {
+        width: 80%;
+    }
+
+    .two-columns {
+        flex-direction: column;
+        margin: 10% auto;
+    }
+
+    .left-column, .right-column {
+        width: 100%;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    #gallery p {
+        font-family: 'Poppins', sans-serif;
+        font-size: 0.8em;
+        width: 75%;
+        margin: 0 auto; /* Centrerer elementet horisontalt */
+        text-align: center; /* Centrerer teksten inden i elementet */
+        color: #000;
+        padding-bottom: 25px;
+    }
+}
+  </style>

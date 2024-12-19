@@ -1,7 +1,9 @@
 ---
 import Fisk from "../components/Fisk.astro";
+import Kategorivisning from "../components/Kategorivisning.astro";
 import Header from "../components/Header.astro";
 import SommerFugl from "../components/SommerFugl.astro";
+import Natur from "../components/Natur.astro";
 import Layout from "../layouts/Layout.astro";
 
 const data = await fetch(
@@ -14,13 +16,20 @@ const data = await fetch(
     },
   }
 ).then((res) => res.json());
+console.log("DATA DATA",data)
 ---
 
 <Layout>
   <Header />
-  {
-    data.map((show) => {
-      return <SommerFugl data={show} />;
-    })
-  }
+
+
+  <div class="fisk">
+  {data.filter((elm)=>   elm.kategori==="fisk" ).map((elm)=>    <Kategorivisning data={elm}/>) }
+</div>
+<div class="sommerfugle">
+  {data.filter((elm)=>   elm.kategori==="sommerfugle" ).map((elm)=>    <Kategorivisning data={elm}/>) }
+
+</div>
+  
+ 
 </Layout>
