@@ -27,7 +27,7 @@ const { produkt } = Astro.props;
   <div class="overskrift">
     <h1>Hvor kommer motiverne fra ?</h1>
     <h2>{produkt.titel}</h2>
-    <p>{produkt.info}</p>
+    <p>{produkt.historie}</p>
   </div>
   <div>
     <div class="maleri-container">
@@ -74,7 +74,7 @@ const { produkt } = Astro.props;
     display: grid;
     grid-template-columns: 1fr 1fr;
     position: absolute;
-    top: 145%;
+    top: 180%;
     left: 65%;
     transform: translate(-50%, -50%);
     color: #000000;
@@ -141,10 +141,37 @@ const { produkt } = Astro.props;
 
   @media (max-width: 766px) {
     .geo_container {
+      position: absolute;
       display: grid;
       grid-template-columns: 1fr 1fr;
       position: absolute;
-      top: 200%;
+      top: 180%%;
+      left: 65%;
+      transform: translate(-50%, -50%);
+      color: #000000;
+      border: #000000 2px solid;
+      text-align: center;
+      z-index: 10;
+
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      font-size: 1.5rem;
+      line-height: 1.4;
+    }
+
+    .geo_container h2 {
+      font-size: 2vw;
+      line-height: 1.5;
+      margin: 0;
+    }
+  }
+
+  @media (max-width: 750px) {
+    .geo_container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      position: absolute;
+      top: 140%%;
       left: 65%;
       transform: translate(-50%, -50%);
       color: #000000;
